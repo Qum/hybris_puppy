@@ -16,8 +16,8 @@
       <!-- for more information on maven managed libraries please consult https://wiki.hybris.com/x/Nq8sDQ -->
                
       <!-- you should add all required extensions to this list, except platform extensions which are automatically required -->         
-      <!-- <requires-extension name="cms"/> -->         
-      
+      <!-- <requires-extension name="cms"/> -->
+      <requires-extension name="cuppy"/>
 
       <coremodule generated="true" manager="de.hybris.platform.cuppytrail.jalo.CuppytrailManager" packageroot="de.hybris.platform.cuppytrail"/>
 
