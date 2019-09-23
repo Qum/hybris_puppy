@@ -32,6 +32,7 @@
 		<property name="name" type="String"/>
 		<property name="capacity" type="String"/>
 		<property name="matches" type="java.util.List&lt;de.hybris.platform.cuppytrail.data.MatchSummaryData>"/>
+		<property name="pk" type="de.hybris.platform.core.PK"/>
 	</bean>
 
 </beans>

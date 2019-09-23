@@ -1,6 +1,7 @@
 package de.hybris.platform.cuppytrail.impl;
 
-import de.hybris.platform.cuppytrail.StadiumService;
+import de.hybris.platform.core.PK;
+import de.hybris.platform.cuppytrail.services.StadiumService;
 import de.hybris.platform.cuppytrail.daos.StadiumDAO;
 import de.hybris.platform.cuppytrail.model.StadiumModel;
 import de.hybris.platform.servicelayer.exceptions.AmbiguousIdentifierException;
@@ -8,10 +9,17 @@ import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
 
 import java.util.List;
 
+import de.hybris.platform.servicelayer.internal.model.impl.DefaultModelService;
+import de.hybris.platform.servicelayer.model.ModelService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 
 public class DefaultStadiumService implements StadiumService
 {
+
+
+    private ModelService modelService;
+
     private StadiumDAO stadiumDAO;
 
     /**
@@ -48,4 +56,22 @@ public class DefaultStadiumService implements StadiumService
     {
         this.stadiumDAO = stadiumDAO;
     }
+
+    @Required
+    public void setModelService(DefaultModelService modelService) { this.modelService = modelService; }
+
+
+    @Override
+    public void removeAllStadiums() {
+        List<StadiumModel> allStadiums = stadiumDAO.findStadiums();
+        modelService.removeAll(allStadiums);
+    }
+
+
+    @Override
+    public void removeStadiumByPk(PK pk) {
+        modelService.remove(pk);
+    }
+
+
 }

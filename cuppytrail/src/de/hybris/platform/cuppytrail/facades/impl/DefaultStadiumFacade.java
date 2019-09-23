@@ -1,5 +1,6 @@
 package de.hybris.platform.cuppytrail.facades.impl;
 
+import de.hybris.platform.core.PK;
 import de.hybris.platform.cuppy.model.MatchModel;
 import de.hybris.platform.cuppytrail.StadiumService;
 import de.hybris.platform.cuppytrail.data.MatchSummaryData;
@@ -30,9 +31,20 @@ public class DefaultStadiumFacade implements StadiumFacade
             final StadiumData sfd = new StadiumData();
             sfd.setName(sm.getCode());
             sfd.setCapacity(sm.getCapacity().toString());
+            sfd.setPk(sm.getPk());
             stadiumFacadeData.add(sfd);
         }
         return stadiumFacadeData;
+    }
+
+    @Override
+    public void removeStadium(PK pk) {
+        stadiumService.removeStadiumByPk(pk);
+    }
+
+    @Override
+    public void removeAllStadiums() {
+        stadiumService.removeAllStadiums();
     }
 
     @Override

@@ -23,12 +23,25 @@
 	<alias name="defaultStadiumService" alias="stadiumService"/>
 	<bean id="defaultStadiumService" class="de.hybris.platform.cuppytrail.impl.DefaultStadiumService">
 		<property name="stadiumDAO" ref="stadiumDAO"/>
+		<property name="modelService" ref="modelService"/>
 	</bean>
-
 
 	<alias name="defaultStadiumFacade" alias="stadiumFacade"/>
 	<bean id="defaultStadiumFacade" class="de.hybris.platform.cuppytrail.facades.impl.DefaultStadiumFacade">
 		<property name="stadiumService" ref="stadiumService" />
+	</bean>
+
+<!--	<bean id="sendRankingJob" class="de.hybris.platform.cuppytrail.jobs.SendRankingJob" autowire="byName"/>
+
+
+	<bean id="RemoveStadiumInterceptor" class="de.hybris.platform.cuppytrail.interceptors.RemoveStadiumInterceptor">
+		<property name="stadiumDAO" ref="stadiumDAO"/>
+	</bean>
+
+
+	<bean id="RemoveStadiumInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="RemoveStadiumInterceptor" />
+		<property name="typeCode" value="Stadium" />
 	</bean>
 
 

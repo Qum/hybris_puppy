@@ -1,5 +1,6 @@
 package de.hybris.platform.cuppytrail.daos;
 
+import de.hybris.platform.core.PK;
 import de.hybris.platform.cuppytrail.model.StadiumModel;
 import java.util.List;
 
@@ -25,4 +26,5 @@ public interface StadiumDAO
      * @return All stadiums with the given code.
      */
     List<StadiumModel> findStadiumsByCode(String code);
+
 }

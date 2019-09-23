@@ -1,6 +1,8 @@
 package de.hybris.platform.cuppytrail.daos.impl;
 
+import de.hybris.platform.core.PK;
 import de.hybris.platform.cuppytrail.model.StadiumModel;
+import de.hybris.platform.servicelayer.model.ModelService;
 import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
 import de.hybris.platform.servicelayer.search.FlexibleSearchService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,9 @@ public class DefaultStadiumDAO implements StadiumDAO
 	 */
 	@Autowired
 	private FlexibleSearchService flexibleSearchService;
+
+	@Autowired
+	private ModelService modelService;
 
 	/**
 	 * Finds all Stadiums by performing a FlexibleSearch using the {@link FlexibleSearchService}.
@@ -60,4 +65,5 @@ public class DefaultStadiumDAO implements StadiumDAO
 
 		return flexibleSearchService.<StadiumModel> search(query).getResult();
 	}
+
 }
