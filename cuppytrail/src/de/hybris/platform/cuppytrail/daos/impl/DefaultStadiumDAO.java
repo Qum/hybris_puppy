@@ -21,9 +21,6 @@ public class DefaultStadiumDAO implements StadiumDAO
 	@Autowired
 	private FlexibleSearchService flexibleSearchService;
 
-	@Autowired
-	private ModelService modelService;
-
 	/**
 	 * Finds all Stadiums by performing a FlexibleSearch using the {@link FlexibleSearchService}.
 	 */

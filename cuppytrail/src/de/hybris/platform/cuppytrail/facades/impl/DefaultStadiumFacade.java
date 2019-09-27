@@ -2,7 +2,7 @@ package de.hybris.platform.cuppytrail.facades.impl;
 
 import de.hybris.platform.core.PK;
 import de.hybris.platform.cuppy.model.MatchModel;
-import de.hybris.platform.cuppytrail.StadiumService;
+import de.hybris.platform.cuppytrail.services.StadiumService;
 import de.hybris.platform.cuppytrail.data.MatchSummaryData;
 import de.hybris.platform.cuppytrail.data.StadiumData;
 import de.hybris.platform.cuppytrail.facades.StadiumFacade;
@@ -15,6 +15,7 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
+import de.hybris.platform.cuppytrail.services.StadiumService;
 import org.springframework.beans.factory.annotation.Required;
 
 public class DefaultStadiumFacade implements StadiumFacade
@@ -38,8 +39,8 @@ public class DefaultStadiumFacade implements StadiumFacade
     }
 
     @Override
-    public void removeStadium(PK pk) {
-        stadiumService.removeStadiumByPk(pk);
+    public String removeStadium(PK pk,boolean forced) {
+        return stadiumService.removeStadiumByPk(pk,forced);
     }
 
     @Override

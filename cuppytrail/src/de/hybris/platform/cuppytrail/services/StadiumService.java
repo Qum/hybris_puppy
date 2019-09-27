@@ -24,7 +24,7 @@ public interface StadiumService
      */
     StadiumModel getStadiumForCode(String code);
 
-    void removeStadiumByPk(PK pk);
+    String removeStadiumByPk(PK pk,boolean forced);
 
     void removeAllStadiums() ;
 }

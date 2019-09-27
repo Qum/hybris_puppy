@@ -1,0 +1,10 @@
+INSERT_UPDATE Stadium;code[unique=true];capacity
+                     ;Emirates;60361
+                     ;VillaPark;42788
+
+
+$START_USERRIGHTS
+Type;UID;MemberOfGroups;Password;Target;read;change;create;remove;change_perm
+UserGroup;cuppyadmins;;;;;;;;
+;;;;Stadium;+;+;+;+;-
+$END_USERRIGHTS

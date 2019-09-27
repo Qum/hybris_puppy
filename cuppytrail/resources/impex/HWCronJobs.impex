@@ -1,0 +1,6 @@
+INSERT_UPDATE CronJob; code[unique=true];job(code);singleExecutable;sessionLanguage(isocode)
+                     ;RemoveAllStadiumsCronJob;RemoveAllStadiumsJob;false;de
+
+INSERT_UPDATE Trigger;cronjob(code)[unique=true];cronExpression
+#% afterEach: impex.getLastImportedItem().setActivationTime(new Date());
+                     ; RemoveAllStadiumsJob; 0 0 0/12 ? * * *

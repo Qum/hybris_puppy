@@ -12,7 +12,7 @@ public interface StadiumFacade
 
     List<StadiumData> getStadiums();
 
-    void removeStadium(PK pk);
+    String removeStadium(PK pk,boolean force);
 
     void removeAllStadiums();
 
