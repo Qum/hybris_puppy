@@ -14,7 +14,7 @@ public class RemoveStadiumEvent extends AbstractEvent {
         this.STADIUMPK = stadiumPk;
         this.FORCEDDEL = forcedDel;
     }
-
+  
     public  PK getStadiumPk() {
         return STADIUMPK;
     }

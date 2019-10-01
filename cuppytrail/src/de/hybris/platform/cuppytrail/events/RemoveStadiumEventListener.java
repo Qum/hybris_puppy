@@ -17,7 +17,7 @@ public class RemoveStadiumEventListener extends AbstractEventListener<RemoveStad
     private ModelService modelService;
 
     private StadiumDAO stadiumDAO;
-
+  
     @Override
     public void onEvent(final RemoveStadiumEvent event)
     {
