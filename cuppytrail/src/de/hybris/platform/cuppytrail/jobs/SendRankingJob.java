@@ -26,6 +26,7 @@ import de.hybris.platform.servicelayer.cronjob.PerformResult;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Required;
 
 
 public class SendRankingJob extends AbstractJobPerformable<CronJobModel>
@@ -33,6 +34,7 @@ public class SendRankingJob extends AbstractJobPerformable<CronJobModel>
     private static final Logger LOG = Logger.getLogger(SendRankingJob.class);
 
     private PlayerService playerService;
+
     private MailService mailService;
 
     @Override
@@ -58,11 +60,13 @@ public class SendRankingJob extends AbstractJobPerformable<CronJobModel>
         return new PerformResult(CronJobResult.SUCCESS, CronJobStatus.FINISHED);
     }
 
+    @Required
     public void setPlayerService(final PlayerService playerService)
     {
         this.playerService = playerService;
     }
 
+    @Required
     public void setMailService(final MailService trailMailService)
     {
         this.mailService = trailMailService;

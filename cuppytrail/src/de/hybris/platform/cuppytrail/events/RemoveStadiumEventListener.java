@@ -9,7 +9,6 @@ import de.hybris.platform.servicelayer.exceptions.ModelLoadingException;
 import de.hybris.platform.servicelayer.internal.model.impl.DefaultModelService;
 import de.hybris.platform.servicelayer.model.ModelService;
 
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Required;
 
 public class RemoveStadiumEventListener extends AbstractEventListener<RemoveStadiumEvent>
@@ -17,7 +16,7 @@ public class RemoveStadiumEventListener extends AbstractEventListener<RemoveStad
     private ModelService modelService;
 
     private StadiumDAO stadiumDAO;
-  
+
     @Override
     public void onEvent(final RemoveStadiumEvent event)
     {

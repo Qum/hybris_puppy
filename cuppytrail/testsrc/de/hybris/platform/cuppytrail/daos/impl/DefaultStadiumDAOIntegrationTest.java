@@ -67,6 +67,7 @@ public class DefaultStadiumDAOIntegrationTest extends ServicelayerTransactionalT
         modelService.save(stadiumModel);
 
         allStadiums = stadiumDAO.findStadiums();
+        System.out.print(allStadiums.get(0).getPk());
         assertEquals(size + 1, allStadiums.size());
         assertEquals("Unexpected stadium found", stadiumModel, allStadiums.get(allStadiums.size() - 1));
 

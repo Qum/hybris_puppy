@@ -1,6 +1,3 @@
-/**
- * 
- */
 package de.hybris.platform.cuppy.web.converters;
 
 import de.hybris.platform.cuppy.model.GroupModel;

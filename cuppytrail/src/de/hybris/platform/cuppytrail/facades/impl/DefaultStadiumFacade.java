@@ -20,6 +20,7 @@ import org.springframework.beans.factory.annotation.Required;
 
 public class DefaultStadiumFacade implements StadiumFacade
 {
+
     private StadiumService stadiumService;
 
     @Override

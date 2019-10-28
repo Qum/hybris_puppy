@@ -49,5 +49,19 @@
 				</attribute>
 			</attributes>
 		</itemtype>
+
+		<itemtype code="StadiumRemoveNotif" autocreate="true" generate="true" extends="GenericItem">
+			<deployment table="StadiumRemoveNo" typecode="10143"/>
+			<attributes>
+				<attribute qualifier="TargetStadiumPk" type="java.lang.String">
+					<modifiers initial="true" optional="false" write="true"/>
+					<persistence type="property"/>
+				</attribute>
+				<attribute qualifier="ExceptionOccurred" type="java.lang.Boolean">
+					<modifiers initial="true" optional="false" write="true"/>
+					<persistence type="property"/>
+				</attribute>
+			</attributes>
+		</itemtype>
 	</itemtypes>
 </items>

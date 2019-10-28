@@ -10,7 +10,6 @@ import de.hybris.platform.servicelayer.event.EventService;
 import de.hybris.platform.servicelayer.exceptions.AmbiguousIdentifierException;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import de.hybris.platform.servicelayer.internal.model.impl.DefaultModelService;

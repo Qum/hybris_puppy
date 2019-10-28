@@ -20,8 +20,9 @@
 >
 
 	<context:component-scan base-package="de.hybris.platform.cuppytrail"/>
+
 	<alias name="defaultStadiumService" alias="stadiumService"/>
-	<bean id="defaultStadiumService" class="de.hybris.platform.cuppytrail.impl.DefaultStadiumService">
+	<bean id="defaultStadiumService" class="de.hybris.platform.cuppytrail.services.impl.DefaultStadiumService">
 		<property name="stadiumDAO" ref="stadiumDAO"/>
 		<property name="modelService" ref="modelService"/>
 	</bean>
@@ -32,20 +33,38 @@
 	</bean>
 
 	<bean id="sendRankingJob" class="de.hybris.platform.cuppytrail.jobs.SendRankingJob" autowire="byName"/>
+	
+<!--	<bean id="myListener" class="de.hybris.platform.cuppytrail.events.RemoveStadiumEventListener" >-->
+<!--		<property name="stadiumDAO" ref="stadiumDAO"/>-->
+<!--		<property name="modelService" ref="modelService"/>-->
+<!--		<property name="tenantService" ref="tenantService" />-->
+<!--		<property name="clusterService" ref="clusterService" />-->
+<!--	</bean>-->
+
+	<bean id="RemStadiumListener" class="de.hybris.platform.cuppytrail.events.RemoveStadiumEventListener" >
+		<property name="stadiumDAO" ref="stadiumDAO"/>
+		<property name="modelService" ref="modelService"/>
+		<property name="tenantService" ref="tenantService" />
+		<property name="clusterService" ref="clusterService" />
+	</bean>
+
+	<bean id="ImportStadiumsJob" class="de.hybris.platform.cuppytrail.jobs.ImportStadiumsJob" autowire="byName">
+		<property name="stadiumService" ref="stadiumService" />
+	</bean>
+
+	<bean id="RemoveAllStadiumsJob" class="de.hybris.platform.cuppytrail.jobs.RemoveAllStadiumsJob" autowire="byName"/>
+
+<!--	<bean id="RemoveStadiumInterceptor" class="de.hybris.platform.cuppytrail.interceptors.RemoveStadiumInterceptor">
+		<property name="stadiumDAO" ref="stadiumDAO"/>
+	</bean>
+
+	<bean id="RemoveStadiumInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="RemoveStadiumInterceptor" />
+		<property name="typeCode" value="Stadium" />
+	</bean>
 
 
-	<!--	<bean id="RemoveStadiumInterceptor" class="de.hybris.platform.cuppytrail.interceptors.RemoveStadiumInterceptor">
-            <property name="stadiumDAO" ref="stadiumDAO"/>
-        </bean>
 
-
-        <bean id="RemoveStadiumInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
-            <property name="interceptor" ref="RemoveStadiumInterceptor" />
-            <property name="typeCode" value="Stadium" />
-        </bean>
-
-
-        <!--
         The hybris platform provides one single Spring application context for beans located at the jalo layer.
         Each extension can add beans to this context by specifying them at this configuration file.
 
@@ -105,7 +124,5 @@
 	      	            !execution(* getPK(..))" />
 	       <aop:pointcut id="profiledMethods" expression="execution(* *(..))" />
 	  -->
-
-
 
 </beans>

@@ -16,6 +16,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 
+//for office doc
+
 @Controller
 public class StadiumsController
 {

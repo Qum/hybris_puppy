@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import de.hybris.bootstrap.annotations.IntegrationTest;
-import de.hybris.platform.cuppytrail.StadiumService;
+import de.hybris.platform.cuppytrail.services.StadiumService;
 import de.hybris.platform.cuppytrail.model.StadiumModel;
 import de.hybris.platform.servicelayer.ServicelayerTransactionalTest;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
@@ -16,7 +16,6 @@ import javax.annotation.Resource;
 
 import org.junit.Before;
 import org.junit.Test;
-
 
 @IntegrationTest
 public class DefaultStadiumServiceIntegrationTest extends ServicelayerTransactionalTest

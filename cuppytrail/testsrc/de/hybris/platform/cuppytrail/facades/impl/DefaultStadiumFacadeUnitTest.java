@@ -8,7 +8,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import de.hybris.platform.cuppytrail.StadiumService;
+import de.hybris.platform.cuppytrail.services.StadiumService;
 import de.hybris.platform.cuppytrail.data.StadiumData;
 import de.hybris.platform.cuppytrail.model.StadiumModel;
 
